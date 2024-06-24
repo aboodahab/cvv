@@ -1,0 +1,42 @@
+body{
+    color: black;
+    height: 100%;
+    margin: 0px;
+ display: flex;
+ justify-content: start;
+ align-items: center;
+    background-color: white;
+}
+
+.theFather{
+    height: 100%;
+    font-size: 26px;
+    width: 400px;
+    margin-left: 26px;
+    color: white;
+    border-radius: 4px;;
+   background-color: rgba(134, 44, 134,0.9);
+}
+.fasl{
+    margin-left: 12px;
+    margin-top: 12px;
+}
+.dis{
+    display: flex; 
+    gap:8px; 
+    margin-bottom: 12px;
+} 
+
+.in{
+    border-radius: 4px;
+     font-size: 24px;
+      width: 180px;
+      padding: 4px;
+    }
+    textarea {
+        width: 370px;
+         height: 170px; 
+         font-size: 20px;
+         padding: 4px;
+      }
+        
