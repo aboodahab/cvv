@@ -10,14 +10,11 @@ const textarea = document.querySelector("textarea");
 const imageBtn = document.querySelector(".btn");
 const education1 = document.querySelector(".ed1");
 const education2 = document.querySelector(".ed2");
-const date1 = document.querySelector(".dat");
-const date2 = document.querySelector(".date");
+const today = new Date().toISOString().split("T")[0];
+const date1 = document.querySelector(".dat").setAttribute("max", today);
+const date2 = document.querySelector(".date").setAttribute("max", today);
 
 function onClickBtn() {
-  let date = new Date();
-  let data2 = date2.value.split("-");
-  let data1 = date1.value.split("-");
-
   if (
     names.value === "" ||
     work.value === "" ||
@@ -35,22 +32,7 @@ function onClickBtn() {
     console.log("error: One or more fields are empty");
     return;
   }
-  if (
-    data1[0] > date.getFullYear() ||
-    data1[1] > date.getMonth() + 1 ||
-    data1[2] >= date.getDate()
-  ) {
-    console.log("errrrrrrrr");
-    return;
-  }
-  if (
-    data2[0] > date.getFullYear() ||
-    data2[1] > date.getMonth() + 1 ||
-    data2[2] >= date.getDate()
-  ) {
-    console.log("errrrrrrrr");
-    return;
-  }
+
   fetch("http://localhost:3000/test", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
