@@ -11,8 +11,12 @@ const imageBtn = document.querySelector(".btn");
 const education1 = document.querySelector(".ed1");
 const education2 = document.querySelector(".ed2");
 const today = new Date().toISOString().split("T")[0];
-const date1 = document.querySelector(".dat").setAttribute("max", today);
-const date2 = document.querySelector(".date").setAttribute("max", today);
+const date1 = document.querySelector(".dat");
+const date2 = document.querySelector(".date");
+const onError = document.querySelector(".error");
+
+date1.setAttribute("max", today);
+date2.setAttribute("max", today);
 
 function onClickBtn() {
   if (
@@ -29,28 +33,45 @@ function onClickBtn() {
     date1.value === "" ||
     date2.value === ""
   ) {
+    onError.style.display = "flex";
+    onError.textContent = "Error: One or more fields are empty";
+    setTimeout(() => {
+      onError.textContent = "";
+      onError.style.display = "none";
+    }, 4500);
     console.log("error: One or more fields are empty");
     return;
   }
 
-  fetch("http://localhost:3000/test", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      socialMedia: socialMedia.value,
-      textarea: textarea.value,
-      link: link.value,
-      city: city.value,
-      num: num.value,
-      work: work.value,
-      names: names.value,
-      email: email.value,
-      education2: education2.value,
-      education1: education1.value,
-      date2: date2.value,
-      date1: date1.value,
-    }),
-  });
+  if (email.value.endsWith("@gmail.com")) {
+    fetch("http://localhost:3000/test", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        socialMedia: socialMedia.value,
+        textarea: textarea.value,
+        link: link.value,
+        city: city.value,
+        num: num.value,
+        work: work.value,
+        names: names.value,
+        email: email.value,
+        education2: education2.value,
+        education1: education1.value,
+        date2: date2.value,
+        date1: date1.value,
+      }),
+    });
+  }
+  onError.style.display = "flex";
+  onError.textContent = "Error: please Add Google Gmail";
+  setTimeout(() => {
+    onError.textContent = "";
+    onError.style.display = "none";
+  }, 4500);
 }
-
+function changeData() {
+  link.setAttribute("placeholder", `${socialMedia.value} Link`);
+}
+socialMedia.addEventListener("change", changeData);
 imageBtn.addEventListener("click", onClickBtn);
