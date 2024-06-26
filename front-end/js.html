@@ -11,8 +11,10 @@
        
    
 
-<div style="display: flex; justify-content: center; margin-top: 8px;align-items: center;">
-    Save Data
+<div style="display: flex; justify-content: center; gap: 8px; margin-top: 14px;align-items: center;">
+    <p style="display: inline; margin-block-end: 0px; margin-block-start: 0px;"> Load Data</p>
+    <img src="cloud1-upload-outline.svg" class="btn2" style="width: 30px;margin-left: 8px; margin-right: 8px; " alt="">
+    <p style="display: inline; margin-block-end: 0px; margin-block-start: 0px;"> Save Data</p>
     <img src="cloud-download-outline.svg" class="btn" style="width: 30px; margin-left: 8px; " alt="">
 </div>
 
@@ -24,7 +26,7 @@
         </div>
         <div class="fasl">
             <div class="dis">
-                <input type="text" class="in name" placeholder="Your Name"  >
+                <input type="text" class="in name" placeholder="Your Name" onkeydown="return /[a-z]/i.test(event.key) ">
                 <input type="text" class="in work"  placeholder="Your Work">
             </div>
                 <div class="dis">
@@ -42,7 +44,11 @@
             <p style="display: inline; margin-block-end: 0px; font-size: 22px; text-transform: capitalize;"> Social Media</p>
         </div>
         <div class="fasl">
-            <input type="text" class="in social"   placeholder="Social Media" onkeydown="return /[a-z]/i.test(event.key)" >
+            <select name="" id="" class="in social">
+                <option value="github">Github</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="facebook">Facebook</option>
+            </select>
 <input type="text"  class="in link" placeholder="Website Link" >
         </div>
         <div class="fasl">

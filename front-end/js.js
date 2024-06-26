@@ -12,7 +12,12 @@ const education1 = document.querySelector(".ed1");
 const education2 = document.querySelector(".ed2");
 const date1 = document.querySelector(".dat");
 const date2 = document.querySelector(".date");
+
 function onClickBtn() {
+  let date = new Date();
+  let data2 = date2.value.split("-");
+  let data1 = date1.value.split("-");
+
   if (
     names.value === "" ||
     work.value === "" ||
@@ -27,26 +32,43 @@ function onClickBtn() {
     date1.value === "" ||
     date2.value === ""
   ) {
-    console.log("error");
+    console.log("error: One or more fields are empty");
+    return;
+  }
+  if (
+    data1[0] > date.getFullYear() ||
+    data1[1] > date.getMonth() + 1 ||
+    data1[2] >= date.getDate()
+  ) {
+    console.log("errrrrrrrr");
+    return;
+  }
+  if (
+    data2[0] > date.getFullYear() ||
+    data2[1] > date.getMonth() + 1 ||
+    data2[2] >= date.getDate()
+  ) {
+    console.log("errrrrrrrr");
     return;
   }
   fetch("http://localhost:3000/test", {
-    method: "post",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      socialMedia,
-      textarea,
-      link,
-      city,
-      num,
-      work,
-      names,
-      email,
-      education2,
-      education1,
-      date2,
-      date1,
+      socialMedia: socialMedia.value,
+      textarea: textarea.value,
+      link: link.value,
+      city: city.value,
+      num: num.value,
+      work: work.value,
+      names: names.value,
+      email: email.value,
+      education2: education2.value,
+      education1: education1.value,
+      date2: date2.value,
+      date1: date1.value,
     }),
   });
 }
+
 imageBtn.addEventListener("click", onClickBtn);

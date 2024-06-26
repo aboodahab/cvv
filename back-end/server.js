@@ -1,10 +1,16 @@
 const express = require("express");
+const cors = require("cors");
+
 const fs = require("fs");
 const app = express();
 app.use(express.json());
+app.use(cors());
+let nums = 0;
 app.post("/test", function (req, res) {
+  let fileText = `${req.body.names}`;
+
   console.log(req.body);
-  fs.writeFile("./cv.text", "variable", (err) => {
+  fs.writeFile(`./cv${nums++}.text`, fileText, (err) => {
     if (err) {
       console.error(err);
     } else {
