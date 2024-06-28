@@ -14,11 +14,12 @@ const today = new Date().toISOString().split("T")[0];
 const date1 = document.querySelector(".dat");
 const date2 = document.querySelector(".date");
 const onError = document.querySelector(".error");
-
 date1.setAttribute("max", today);
 date2.setAttribute("max", today);
-
 function onClickBtn() {
+  let dat1 = date1.value.split("-");
+  let dat2 = date2.value.split("-");
+  console.log(dat1, dat2);
   if (
     names.value === "" ||
     work.value === "" ||
@@ -42,7 +43,12 @@ function onClickBtn() {
     console.log("error: One or more fields are empty");
     return;
   }
-
+  if (dat1[0] > dat2[0] || dat1[1] > dat2[1] || dat1[2] >= dat2[2]) {
+    onError.style.display = "flex";
+    onError.textContent = "Error: One or more fields are emffffpty";
+    console.log("ee")
+    return
+  }
   if (email.value.endsWith("@gmail.com")) {
     fetch("http://localhost:3000/test", {
       method: "POST",
@@ -72,6 +78,7 @@ function onClickBtn() {
 }
 function changeData() {
   link.setAttribute("placeholder", `${socialMedia.value} Link`);
+  console.log("changed");
 }
 socialMedia.addEventListener("change", changeData);
 imageBtn.addEventListener("click", onClickBtn);

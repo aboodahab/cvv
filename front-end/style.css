@@ -4,7 +4,8 @@ body{
     margin: 0px;
  display: flex;
  justify-content: start;
- align-items: center;
+ gap:42px ;
+
     background-color: white;
 }
 
@@ -23,6 +24,7 @@ body{
 }
 .dis{
     display: flex; 
+
     gap:8px; 
     margin-bottom: 12px;
 } 
@@ -39,4 +41,10 @@ body{
          font-size: 20px;
          padding: 4px;
       }
-        
+
+      .margin{
+        font-size:  19px;
+         display: inline; 
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+}
