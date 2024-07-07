@@ -15,6 +15,7 @@ import {
   date1Text,
   date2Text,
 } from "./data.mjs";
+
 import {
   ref2,
   workText,
@@ -42,7 +43,6 @@ date1.setAttribute("max", today);
 date2.setAttribute("max", today);
 
 function onClickBtn(e) {
-  e.preventDefault();
   console.log(ref2.value);
 
   let dat1 = date1.value.split("-");
@@ -106,22 +106,7 @@ function onClickBtn(e) {
   }
 
   if (email.value.endsWith("@gmail.com")) {
-    nameText4.textContent = `${name3.value}`;
-    numberText4.textContent = `${num3.value}`;
-    revlationText.textContent = `${date1.value}`;
-    date1Text.textContent = `${date1.value}`;
-    date2Text.textContent = `${date2.value}`;
-    specialtyText.textContent = `${education1.value}`;
-    unversityText.textContent = `${education2.value}`;
-    summaryText.textContent = `${textarea.value}`;
-    nameText.textContent = `${names.value}`;
-    workText.textContent = `${work.value}`;
-    h1.style.display = "inline";
-    logo.src = `logo-${socialMedia.value}.svg`;
-    location2.textContent = `${city.value}`;
-    number.textContent = `${num.value}`;
-    email2.textContent = `${email.value}`;
-    onError.style.display = "none";
+    frontEnd();
     fetchFn();
     return;
   }
@@ -131,11 +116,32 @@ function onClickBtn(e) {
     onError.textContent = "";
     onError.style.display = "none";
   }, 4500);
+  e.preventDefault();
+}
+function frontEnd() {
+  nameText4.textContent = `${name3.value}`;
+  numberText4.textContent = `${num3.value}`;
+  revlationText.textContent = `${ref2.value}`;
+  date1Text.textContent = `${date1.value}`;
+  date2Text.textContent = `${date2.value}`;
+  specialtyText.textContent = `${education1.value}`;
+  unversityText.textContent = `${education2.value}`;
+  summaryText.textContent = `${textarea.value}`;
+  nameText.textContent = `${names.value}`;
+  workText.textContent = `${work.value}`;
+  h1.style.display = "inline";
+  logo.src = `logo-${socialMedia.value}.svg`;
+  location2.textContent = `${city.value}`;
+  number.textContent = `${num.value}`;
+  email2.textContent = `${email.value}`;
+
+  onError.style.display = "none";
 }
 function changeData() {
   link.setAttribute("placeholder", `${socialMedia.value} Link`);
   console.log("changed");
 }
+
 function fetchFn() {
   fetch("http://localhost:3000/test", {
     method: "POST",

@@ -1,4 +1,5 @@
 const names = document.querySelector(".name");
+const form = document.querySelector("form");
 const work = document.querySelector(".work");
 const num = document.querySelector(".num");
 const email = document.querySelector(".email");
@@ -35,6 +36,7 @@ const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
 
 export {
+  form,
   ref2,
   nameText4,
   revlationText,
