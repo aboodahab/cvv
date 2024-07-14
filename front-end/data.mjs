@@ -5,7 +5,8 @@ const num = document.querySelector(".num");
 const email = document.querySelector(".email");
 const city = document.querySelector(".city");
 const link = document.querySelector(".link");
-const img = document.querySelector(".img");
+const imgInp = document.querySelector(".img");
+const blah = document.querySelector("#blah");
 const socialMedia = document.querySelector(".social");
 const textarea = document.querySelector("textarea");
 const imageBtn = document.querySelector(".btn");
@@ -36,6 +37,7 @@ const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
 
 export {
+  blah,
   form,
   ref2,
   nameText4,
@@ -52,7 +54,7 @@ export {
   email,
   city,
   link,
-  img,
+  imgInp,
   socialMedia,
   textarea,
   imageBtn,

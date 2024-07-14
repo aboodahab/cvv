@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const fs = require("fs");
+const { dirname } = require("path");
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -20,24 +21,7 @@ app.post("/test", function (req, res) {
   res.json({ j: "ss" });
 });
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
 
-// Create the multer instance
-const upload = multer({ storage: storage });
-
-app.post("/files", upload.single("file"), (req, res) => {
-  console.log(req.body, "youtube.cm");
-
-  res.json({ message: "File uploaded successfully!" });
-});
-// app.use("/uploads", express.static(__dirname + "/uploads"));
 app.listen(3000, () => {
   console.log("meo");
 });

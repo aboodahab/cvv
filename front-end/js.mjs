@@ -8,7 +8,7 @@ import {
   email,
   city,
   link,
-  img,
+  imgInp,
   socialMedia,
   textarea,
   imageBtn,
