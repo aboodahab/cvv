@@ -75,3 +75,23 @@ export {
   summaryText,
   unversityText,
 };
+//document.getElementById("myForm").addEventListener("submit", function (event) {
+  //   event.preventDefault(); // Prevent the default form submission
+  
+  //   const formData = new FormData(this); // Create FormData object from the form
+  
+  //   fetch(this.action, {
+  //     method: this.method,
+  //     body: formData,
+  //   })
+  //     .then((response) => response.json()) // or response.text() based on the server response
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //       // Optionally, you can handle the response here, update the UI, etc.
+  //       // For example, you might want to update the UI to reflect the form submission
+  //       // data could be used to update form elements or display messages
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // });

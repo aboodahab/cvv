@@ -8,14 +8,21 @@ import {
   email,
   city,
   link,
-  imgInp,
   socialMedia,
   textarea,
   imageBtn,
   date1Text,
   date2Text,
+  blah,
 } from "./data.mjs";
 
+import {
+  doubleCheck,
+  changeImg,
+  checking,
+  changeData,
+  fetchFn,
+} from "./functions.mjs";
 import {
   ref2,
   workText,
@@ -43,6 +50,7 @@ date1.setAttribute("max", today);
 date2.setAttribute("max", today);
 
 function onClickBtn(e) {
+  e.preventDefault();
   console.log(ref2.value);
 
   let dat1 = date1.value.split("-");
@@ -62,6 +70,7 @@ function onClickBtn(e) {
     date1.value === "" ||
     date2.value === ""
   ) {
+    e.preventDefault();
     onError.style.display = "flex";
     onError.textContent = "Error: One or more fields are empty";
     setTimeout(() => {
@@ -74,6 +83,7 @@ function onClickBtn(e) {
   let datt1 = dat1[1].slice(1);
   let datt2 = dat1[1].slice(1);
   if (datt1 > datt2) {
+    e.preventDefault();
     onError.style.display = "flex";
     onError.textContent = "Error: One or more fields are emffffpty";
     setTimeout(() => {
@@ -84,6 +94,7 @@ function onClickBtn(e) {
     return;
   }
   if (datt1[1] > datt2[1]) {
+    e.preventDefault();
     onError.style.display = "flex";
     onError.textContent = "Error: One or more fields are emffffpty";
     setTimeout(() => {
@@ -95,6 +106,7 @@ function onClickBtn(e) {
   }
 
   if (datt1[2] > datt2[2]) {
+    e.preventDefault();
     onError.style.display = "flex";
     onError.textContent = "Error: One or more fields are emffffpty";
     setTimeout(() => {
@@ -104,21 +116,33 @@ function onClickBtn(e) {
     console.log("ee");
     return;
   }
-
+  if (doubleCheck() === "no") {
+    return;
+  }
   if (email.value.endsWith("@gmail.com")) {
-    frontEnd();
     fetchFn();
+    frontEnd();
     return;
   }
 
+  onError.style.display = "flex";
   onError.textContent = "Error: please Add Google Gmail";
   setTimeout(() => {
     onError.textContent = "";
     onError.style.display = "none";
-  }, 4500);
-  e.preventDefault();
+  }, 3000);
+  return;
 }
+
 function frontEnd() {
+  if (checking() === "yes") {
+    changeImg();
+  }
+  if (checking() === "no") {
+    blah.style.display = "none";
+  }
+  nameText4.style.display = `flex`;
+  numberText4.style.display = "flex";
   nameText4.textContent = `${name3.value}`;
   numberText4.textContent = `${num3.value}`;
   revlationText.textContent = `${ref2.value}`;
@@ -136,33 +160,6 @@ function frontEnd() {
   email2.textContent = `${email.value}`;
 
   onError.style.display = "none";
-}
-function changeData() {
-  link.setAttribute("placeholder", `${socialMedia.value} Link`);
-  console.log("changed");
-}
-
-function fetchFn() {
-  fetch("http://localhost:3000/test", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      socialMedia: socialMedia.value,
-      textarea: textarea.value,
-      number22: num3.value,
-      name2: name3.value,
-      link: link.value,
-      city: city.value,
-      num: num.value,
-      work: work.value,
-      names: names.value,
-      email: email.value,
-      education2: education2.value,
-      education1: education1.value,
-      date2: date2.value,
-      date1: date1.value,
-    }),
-  });
 }
 
 socialMedia.addEventListener("change", changeData);

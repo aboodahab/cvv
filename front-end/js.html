@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="localhost:3000/files" method="post" enctype="multipart/form-data">
+    <form id="myForm" >
     <div class="theFather">
         
         <div style="display: flex; justify-content: center;">
-       
+      
    
 
 <div style="display: flex; justify-content: center; gap: 8px; margin-top: 14px;align-items: center;">
@@ -84,7 +84,7 @@
               </div>
         </div>
         <div class="fasl">
-            <p style="display: inline; margin-block-end: 0px; font-size: 22px; text-transform: capitalize;"> Education</p>
+            <p class="education-paragraph"> Education</p>
         </div>
         <div class="fasl">
             <input type="text"  placeholder="Your Specialty" class="ed1" style="width: 380px;margin-right: 10px; font-size: 24px; border-radius: 5px;" class="in">
@@ -104,7 +104,7 @@
         </div>
         <div class="fasl" style="margin: 0px;">
        <div style="display: flex; justify-content: center;">
-        <p style="display: none; margin-block-end: 0px; font-size: 24px; text-transform: capitalize;" class="error"> </p>
+        <p  class="error"> </p>
        </div>
      
         </div>
@@ -113,11 +113,11 @@
     
     <div style="display: flex;margin-top: 20px; justify-content: center; width: 100%;">
      
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 33%;">
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 20%;">
 
 <h1 class="margin hs1" style="font-size: 40px; display: inline;">
   <div style="display: flex; justify-content: end;">
-<img src="logo-facebook.svg" id="blah'" width="120" alt="">
+<img src="logo-facebook.svg" id="blah" width="120" alt="">
   </div>
   <div >
 
@@ -161,7 +161,7 @@
 <div >
 
 
-  <p class="margin specialty-text">blablablas</p> 
+  <p class="margin specialty-text">blablabla</p> 
 
   <br>
   <p class="margin universty-text">blablabla</p> 
@@ -224,7 +224,8 @@
 
   </div>
 
-</div> <script src="u.mjs"  type="module"></script>
+</div> 
+<script src="functions.mjs"  type="module"></script>
 <script src="data.mjs" type="module"></script>
     <script src="js.mjs" type="module"></script>
 </body>
