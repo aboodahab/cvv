@@ -141,11 +141,7 @@ function frontEnd() {
   if (checking() === "no") {
     blah.style.display = "none";
   }
-  nameText4.style.display = `flex`;
-  numberText4.style.display = "flex";
-  nameText4.textContent = `${name3.value}`;
-  numberText4.textContent = `${num3.value}`;
-  revlationText.textContent = `${ref2.value}`;
+
   date1Text.textContent = `${date1.value}`;
   date2Text.textContent = `${date2.value}`;
   specialtyText.textContent = `${education1.value}`;

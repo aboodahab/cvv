@@ -24,6 +24,8 @@ const email2 = document.querySelector(".email2");
 const name3 = document.querySelector(".name3");
 const num3 = document.querySelector(".num3");
 const ref = document.querySelector(".ref");
+const divNumberText = document.querySelector(".remove-numberText");
+const divNameText = document.querySelector(".remove-nameText4");
 const ref2 = document.querySelector(".ref2");
 const summaryText = document.querySelector(".summary-text");
 const unversityText = document.querySelector(".universty-text");
@@ -37,6 +39,8 @@ const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
 
 export {
+  divNameText,
+  divNumberText,
   blah,
   form,
   ref2,
@@ -76,22 +80,22 @@ export {
   unversityText,
 };
 //document.getElementById("myForm").addEventListener("submit", function (event) {
-  //   event.preventDefault(); // Prevent the default form submission
-  
-  //   const formData = new FormData(this); // Create FormData object from the form
-  
-  //   fetch(this.action, {
-  //     method: this.method,
-  //     body: formData,
-  //   })
-  //     .then((response) => response.json()) // or response.text() based on the server response
-  //     .then((data) => {
-  //       console.log("Success:", data);
-  //       // Optionally, you can handle the response here, update the UI, etc.
-  //       // For example, you might want to update the UI to reflect the form submission
-  //       // data could be used to update form elements or display messages
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // });
+//   event.preventDefault(); // Prevent the default form submission
+
+//   const formData = new FormData(this); // Create FormData object from the form
+
+//   fetch(this.action, {
+//     method: this.method,
+//     body: formData,
+//   })
+//     .then((response) => response.json()) // or response.text() based on the server response
+//     .then((data) => {
+//       console.log("Success:", data);
+//       // Optionally, you can handle the response here, update the UI, etc.
+//       // For example, you might want to update the UI to reflect the form submission
+//       // data could be used to update form elements or display messages
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//     });
+// });

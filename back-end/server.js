@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const multer = require("multer");
 const fs = require("fs");
-const { dirname } = require("path");
+const jspdf = require("jspdf");
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -20,7 +20,6 @@ app.post("/test", function (req, res) {
   });
   res.json({ j: "ss" });
 });
-
 
 app.listen(3000, () => {
   console.log("meo");

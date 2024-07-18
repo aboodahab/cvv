@@ -1,5 +1,7 @@
 import {
   numberText4,
+  divNameText,
+  divNumberText,
   nameText4,
   revlationText,
   num3,
@@ -32,30 +34,38 @@ function changeData() {
 }
 function doubleCheck() {
   if (name3.value === "" && num3.value === "") {
-    nameText4.style.display = `none`;
-    numberText4.style.display = "none";
-    revlationText.textContent = `optional`;
+    divNameText.style.display = `none`;
+    divNumberText.style.display = "none";
+    revlationText.textContent = `[Available upon request]`;
     return "yes";
   }
   if (name3.value !== "" && num3.value === "") {
-    onError.style.display = "flex";
-    onError.textContent = "Error: Please add the number";
-    setTimeout(() => {
-      onError.style.display = "none";
-      onError.textContent = "";
-    }, 3000);
+    onErrorFn();
     return "no";
   }
   if (name3.value === "" && num3.value !== "") {
-    onError.style.display = "flex";
-    onError.textContent = "Error: Please add the name";
-    setTimeout(() => {
-      onError.style.display = "none";
-      onError.textContent = "";
-    }, 3000);
+    onErrorFn();
     return "no";
   }
+  onSuccses();
 }
+function onErrorFn() {
+  onError.style.display = "flex";
+  onError.textContent = "Error: Please add the name";
+  setTimeout(() => {
+    onError.style.display = "none";
+    onError.textContent = "";
+  }, 3000);
+}
+function onSuccses() {
+  nameText4.style.display = `flex`;
+  numberText4.style.display = "flex";
+
+  nameText4.textContent = `${name3.value}`;
+  numberText4.textContent = `${num3.value}`;
+  revlationText.textContent = `${ref2.value}`;
+}
+
 function fetchFn() {
   fetch("http://localhost:3000/test", {
     method: "POST",
