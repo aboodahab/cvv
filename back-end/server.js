@@ -1,23 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-const jspdf = require("jspdf");
-
+const { jsPDF } = require("jspdf");
 const app = express();
 app.use(express.json());
 app.use(cors());
-let nums = 0;
-app.post("/test", function (req, res) {
-  let fileText = `${req.body.names}`;
 
-  console.log(req.body);
-  fs.writeFile(`./cv${nums++}.text`, fileText, (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      // file written successfully
-    }
-  });
+app.post("/test", function (req, res) {
+  const doc = new jsPDF();
+  // doc.text("Hello world!", 10, 10);
+  // doc.save("a4.pdf");
   res.json({ j: "ss" });
 });
 

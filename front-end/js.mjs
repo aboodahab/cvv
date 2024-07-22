@@ -1,7 +1,4 @@
 import {
-  numberText4,
-  nameText4,
-  revlationText,
   names,
   work,
   num,
@@ -11,14 +8,19 @@ import {
   socialMedia,
   textarea,
   imageBtn,
+  important,
+  form,
   date1Text,
   date2Text,
   blah,
+  num3,
+  name3,
 } from "./data.mjs";
 
 import {
   doubleCheck,
   changeImg,
+  clearAllData,
   checking,
   changeData,
   fetchFn,
@@ -38,21 +40,16 @@ import {
   location2,
   number,
   email2,
-  name3,
-  num3,
-  ref,
   summaryText,
   unversityText,
   specialtyText,
 } from "./data.mjs";
+import { text } from "express";
 
 date1.setAttribute("max", today);
 date2.setAttribute("max", today);
 
 function onClickBtn(e) {
-  e.preventDefault();
-  console.log(ref2.value);
-
   let dat1 = date1.value.split("-");
   let dat2 = date2.value.split("-");
   console.log(dat1, dat2);
@@ -136,12 +133,13 @@ function onClickBtn(e) {
 
 function frontEnd() {
   if (checking() === "yes") {
+    blah.style.display = "flex";
     changeImg();
   }
   if (checking() === "no") {
     blah.style.display = "none";
   }
-
+  important.style.display = "flex";
   date1Text.textContent = `${date1.value}`;
   date2Text.textContent = `${date2.value}`;
   specialtyText.textContent = `${education1.value}`;
@@ -156,7 +154,13 @@ function frontEnd() {
   email2.textContent = `${email.value}`;
 
   onError.style.display = "none";
+  setTimeout(() => {
+    important.style.display = "none";
+  }, 6000);
 }
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 socialMedia.addEventListener("change", changeData);
 imageBtn.addEventListener("click", onClickBtn);

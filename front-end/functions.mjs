@@ -1,7 +1,5 @@
 import {
   numberText4,
-  divNameText,
-  divNumberText,
   nameText4,
   revlationText,
   num3,
@@ -11,8 +9,10 @@ import {
   onError,
   link,
   names,
+  refDiv,
   textarea,
   num,
+  ref2,
   city,
   email,
   work,
@@ -28,14 +28,16 @@ function checking() {
   }
   return "yes";
 }
+
 function changeData() {
   link.setAttribute("placeholder", `${socialMedia.value} Link`);
   console.log("changed");
 }
 function doubleCheck() {
   if (name3.value === "" && num3.value === "") {
-    divNameText.style.display = `none`;
-    divNumberText.style.display = "none";
+    nameText4.style.display = "none";
+    numberText4.style.display = "none";
+    refDiv.style.display = "none";
     revlationText.textContent = `[Available upon request]`;
     return "yes";
   }
@@ -44,14 +46,15 @@ function doubleCheck() {
     return "no";
   }
   if (name3.value === "" && num3.value !== "") {
+    console.log("sssssssssssssssssssssss333333333333333333333333333333");
     onErrorFn();
     return "no";
   }
   onSuccses();
 }
-function onErrorFn() {
+function onErrorFn(evnet) {
   onError.style.display = "flex";
-  onError.textContent = "Error: Please add the name";
+  onError.textContent = `Error: Please add the ${evnet}`;
   setTimeout(() => {
     onError.style.display = "none";
     onError.textContent = "";
@@ -60,7 +63,7 @@ function onErrorFn() {
 function onSuccses() {
   nameText4.style.display = `flex`;
   numberText4.style.display = "flex";
-
+  refDiv.style.display = "flex";
   nameText4.textContent = `${name3.value}`;
   numberText4.textContent = `${num3.value}`;
   revlationText.textContent = `${ref2.value}`;
@@ -88,6 +91,46 @@ function fetchFn() {
     }),
   });
 }
+// function clearAllData(
+//   name,
+//   work,
+//   city,
+//   email,
+//   link,
+//   number,
+//   summary,
+//   refName,
+//   refNum,
+//   specialty,
+//   unversity
+// ) {
+//   if (refName === "" && refNum === "") {
+//     name.value = "";
+//     work.value = "";
+//     city.value = "";
+//     unversity.value = "";
+//     specialty.value = "";
+
+//     number.value = "";
+//     summary.value = "";
+//     email.value = "";
+//     link.value = "";
+//     return;
+//   }
+//   name.value = "";
+//   work.value = "";
+//   city.value = "";
+//   unversity.value = "";
+//   specialty.value = "";
+//   refRe.value = "";
+//   number.value = "";
+//   summary.value = "";
+//   email.value = "";
+//   link.value = "";
+//   refNum.value = "";
+//   refName.value = "";
+// }
+
 function changeImg() {
   const [file] = imgInp.files;
   if (file) {
