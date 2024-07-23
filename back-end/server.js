@@ -10,6 +10,7 @@ app.post("/test", function (req, res) {
   const doc = new jsPDF();
   // doc.text("Hello world!", 10, 10);
   // doc.save("a4.pdf");
+  console.log(req.body);
   res.json({ j: "ss" });
 });
 

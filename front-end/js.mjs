@@ -44,7 +44,6 @@ import {
   unversityText,
   specialtyText,
 } from "./data.mjs";
-import { text } from "express";
 
 date1.setAttribute("max", today);
 date2.setAttribute("max", today);
@@ -119,6 +118,21 @@ function onClickBtn(e) {
   if (email.value.endsWith("@gmail.com")) {
     fetchFn();
     frontEnd();
+    clearAllData(
+      names,
+      work,
+      city,
+      email,
+      link,
+      num,
+      textarea,
+      name3,
+      num3,
+      education1,
+      education2,
+      date1,
+      date2
+    );
     return;
   }
 
@@ -139,12 +153,14 @@ function frontEnd() {
   if (checking() === "no") {
     blah.style.display = "none";
   }
+  summaryText.textContent = `${textarea.value}`;
+
   important.style.display = "flex";
   date1Text.textContent = `${date1.value}`;
   date2Text.textContent = `${date2.value}`;
   specialtyText.textContent = `${education1.value}`;
   unversityText.textContent = `${education2.value}`;
-  summaryText.textContent = `${textarea.value}`;
+
   nameText.textContent = `${names.value}`;
   workText.textContent = `${work.value}`;
   h1.style.display = "inline";
@@ -156,7 +172,7 @@ function frontEnd() {
   onError.style.display = "none";
   setTimeout(() => {
     important.style.display = "none";
-  }, 6000);
+  }, 7500);
 }
 form.addEventListener("submit", (e) => {
   e.preventDefault();

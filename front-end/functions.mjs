@@ -91,45 +91,49 @@ function fetchFn() {
     }),
   });
 }
-// function clearAllData(
-//   name,
-//   work,
-//   city,
-//   email,
-//   link,
-//   number,
-//   summary,
-//   refName,
-//   refNum,
-//   specialty,
-//   unversity
-// ) {
-//   if (refName === "" && refNum === "") {
-//     name.value = "";
-//     work.value = "";
-//     city.value = "";
-//     unversity.value = "";
-//     specialty.value = "";
-
-//     number.value = "";
-//     summary.value = "";
-//     email.value = "";
-//     link.value = "";
-//     return;
-//   }
-//   name.value = "";
-//   work.value = "";
-//   city.value = "";
-//   unversity.value = "";
-//   specialty.value = "";
-//   refRe.value = "";
-//   number.value = "";
-//   summary.value = "";
-//   email.value = "";
-//   link.value = "";
-//   refNum.value = "";
-//   refName.value = "";
-// }
+function clearAllData(
+  name,
+  work,
+  city,
+  email,
+  link,
+  number,
+  summary,
+  refName,
+  refNum,
+  specialty,
+  unversity,
+  date1,
+  date2
+) {
+  if (refName === "" && refNum === "") {
+    name.value = "";
+    work.value = "";
+    city.value = "";
+    unversity.value = "";
+    specialty.value = "";
+    date1.value = "";
+    date2.value = "";
+    number.value = "";
+    summary.value = "";
+    email.value = "";
+    link.value = "";
+    return;
+  }
+  name.value = "";
+  work.value = "";
+  city.value = "";
+  unversity.value = "";
+  specialty.value = "";
+  date1.value = "";
+  date2.value = "";
+  number.value = "";
+  summary.value = "";
+  email.value = "";
+  link.value = "";
+  refNum.value = "";
+  refName.value = "";
+}
 
 function changeImg() {
   const [file] = imgInp.files;
@@ -138,4 +142,4 @@ function changeImg() {
   }
 }
 
-export { doubleCheck, changeImg, checking, changeData, fetchFn };
+export { doubleCheck, changeImg, checking, changeData, fetchFn, clearAllData };
