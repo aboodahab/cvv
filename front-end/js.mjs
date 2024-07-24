@@ -26,7 +26,9 @@ import {
   fetchFn,
 } from "./functions.mjs";
 import {
+  go,
   ref2,
+  editDiv,
   workText,
   nameText,
   education1,
@@ -118,21 +120,24 @@ function onClickBtn(e) {
   if (email.value.endsWith("@gmail.com")) {
     fetchFn();
     frontEnd();
-    clearAllData(
-      names,
-      work,
-      city,
-      email,
-      link,
-      num,
-      textarea,
-      name3,
-      num3,
-      education1,
-      education2,
-      date1,
-      date2
-    );
+    editDiv.style.display = "flex";
+    go.addEventListener("click", () => {
+      clearAllData(
+        names,
+        work,
+        city,
+        email,
+        link,
+        num,
+        textarea,
+        name3,
+        num3,
+        education1,
+        education2,
+        date1,
+        date2
+      );
+    });
     return;
   }
 
@@ -172,7 +177,7 @@ function frontEnd() {
   onError.style.display = "none";
   setTimeout(() => {
     important.style.display = "none";
-  }, 7500);
+  }, 5500);
 }
 form.addEventListener("submit", (e) => {
   e.preventDefault();

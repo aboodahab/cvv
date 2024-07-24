@@ -72,7 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .edit-div{
 
-  display: flex; 
+  display: none; 
   align-items: end;
   justify-content: end;
    margin-right: 20px;
@@ -80,12 +80,9 @@ input[type=number]::-webkit-outer-spin-button {
    gap: 15px
    ;
 }
-.edit{
-  font-size: 14px;
-padding: 2px;
-color: white;
-background-color:cadetblue;
-border-radius: 4px;
+.summary-text{
+  white-space: pre; 
+word-break: break-all;
 }
 .dont-edit{
   font-size: 14px;

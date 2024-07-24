@@ -37,8 +37,13 @@ const date2Text = document.querySelector(".date2-text");
 const revlationText = document.querySelector(".revlationText4");
 const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
+const editDiv = document.querySelector(".edit-div");
 
+const go = document.querySelector(".dont-edit");
 export {
+
+  go,
+  editDiv,
   refDiv,
   important,
   blah,
