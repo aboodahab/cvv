@@ -22,13 +22,13 @@ import {
   changeImg,
   clearAllData,
   checking,
+  downloadFn,
   changeData,
   fetchFn,
 } from "./functions.mjs";
 import {
-  go,
+  btnDownload,
   ref2,
-  editDiv,
   workText,
   nameText,
   education1,
@@ -120,23 +120,27 @@ function onClickBtn(e) {
   if (email.value.endsWith("@gmail.com")) {
     fetchFn();
     frontEnd();
-    editDiv.style.display = "flex";
-    go.addEventListener("click", () => {
-      clearAllData(
-        names,
-        work,
-        city,
-        email,
-        link,
-        num,
-        textarea,
-        name3,
-        num3,
-        education1,
-        education2,
-        date1,
-        date2
-      );
+
+    btnDownload.addEventListener("click", () => {
+      important.style.display = "none";
+      downloadFn();
+      setTimeout(() => {
+        clearAllData(
+          names,
+          work,
+          city,
+          email,
+          link,
+          num,
+          textarea,
+          name3,
+          num3,
+          education1,
+          education2,
+          date1,
+          date2
+        );
+      }, 3000);
     });
     return;
   }
@@ -177,7 +181,7 @@ function frontEnd() {
   onError.style.display = "none";
   setTimeout(() => {
     important.style.display = "none";
-  }, 5500);
+  }, 6500);
 }
 form.addEventListener("submit", (e) => {
   e.preventDefault();

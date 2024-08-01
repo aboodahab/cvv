@@ -13,6 +13,7 @@ const textarea = document.querySelector("textarea");
 const imageBtn = document.querySelector(".btn");
 const education1 = document.querySelector(".ed1");
 const education2 = document.querySelector(".ed2");
+const btnDownload = document.querySelector(".btn2");
 const today = new Date().toISOString().split("T")[0];
 const date1 = document.querySelector(".dat");
 const date2 = document.querySelector(".date");
@@ -37,13 +38,9 @@ const date2Text = document.querySelector(".date2-text");
 const revlationText = document.querySelector(".revlationText4");
 const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
-const editDiv = document.querySelector(".edit-div");
 
-const go = document.querySelector(".dont-edit");
 export {
-
-  go,
-  editDiv,
+  btnDownload,
   refDiv,
   important,
   blah,

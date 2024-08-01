@@ -42,12 +42,12 @@ function doubleCheck() {
     return "yes";
   }
   if (name3.value !== "" && num3.value === "") {
-    onErrorFn();
+    onErrorFn("number");
     return "no";
   }
   if (name3.value === "" && num3.value !== "") {
     console.log("sssssssssssssssssssssss333333333333333333333333333333");
-    onErrorFn();
+    onErrorFn("name");
     return "no";
   }
   onSuccses();
@@ -134,6 +134,28 @@ function clearAllData(
   refNum.value = "";
   refName.value = "";
 }
+function downloadFn() {
+  fetch("http://localhost:3000/cvv", {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      socialMedia: socialMedia.value,
+      textarea: textarea.value,
+      number22: num3.value,
+      name2: name3.value,
+      link: link.value,
+      city: city.value,
+      num: num.value,
+      work: work.value,
+      names: names.value,
+      email: email.value,
+      education2: education2.value,
+      education1: education1.value,
+      date2: date2.value,
+      date1: date1.value,
+    }),
+  });
+}
 
 function changeImg() {
   const [file] = imgInp.files;
@@ -142,4 +164,4 @@ function changeImg() {
   }
 }
 
-export { doubleCheck, changeImg, checking, changeData, fetchFn, clearAllData };
+export { doubleCheck, changeImg, checking,downloadFn, changeData, fetchFn, clearAllData };

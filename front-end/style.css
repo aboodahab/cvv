@@ -80,8 +80,12 @@ input[type=number]::-webkit-outer-spin-button {
    gap: 15px
    ;
 }
+.summaryTextDiv{
+  max-width:240px;
+}
 .summary-text{
-  white-space: pre; 
+  
+  white-space:break-spaces; 
 word-break: break-all;
 }
 .dont-edit{
