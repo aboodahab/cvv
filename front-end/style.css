@@ -52,6 +52,12 @@ form {
       width: 180px;
       padding: 4px;
     }
+    .h1{
+      display: flex; 
+      justify-content: center;
+       align-items: center;
+        width: 100%;
+    }
     textarea {
         width: 370px;
          height: 170px; 
@@ -64,6 +70,13 @@ form {
          display: inline; 
           margin-block-start: 0px;
           margin-block-end: 0px;
+}
+.important{
+  display: flex;
+  margin-top: 20px; 
+  gap: 0px;
+   justify-content: center; 
+   width: 100%;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
