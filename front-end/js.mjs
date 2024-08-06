@@ -118,6 +118,15 @@ function onClickBtn(e) {
     return;
   }
   if (email.value.endsWith("@gmail.com")) {
+    if(email.value==="@gmail.com"){
+      onError.style.display = "flex";
+      onError.textContent = "Error: please add a characters";
+      setTimeout(() => {
+        onError.style.display = "none";
+        onError.textContent = "";
+      }, 3000);
+      return
+    }
     fetchFn();
     frontEnd();
 

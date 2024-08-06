@@ -23,8 +23,8 @@ app.post("/cvv", async function (req, res) {
     doc.setFontSize(14);
     doc.text(`${req.body.work}`, 16.5, 16.5);
     doc.setFontSize(11);
-    doc.text(`${req.body.num}`, 9.5, 19);
-    doc.addImage("call-outline.svg", "svg", 20, 20, 9, 19);
+   doc.text(`${req.body.num}`, 9.5, 19);
+  doc.addSvgAsImage("call-outline.svg", 20, 20, 9, 19);
     doc.save(`ess.pdf`);
 
     return;
@@ -36,7 +36,7 @@ app.post("/cvv", async function (req, res) {
   doc.text(`${req.body.work}`, 16.5, 16.5);
   doc.setFontSize(11);
   doc.text(`${req.body.num}`, 9.5, 19);
-  doc.addImage("call-outline.svg", "svg", 20, 20, 9, 19);
+  doc.addSvgAsImage("call-outline.svg", 20, 20, 9, 19)
   doc.save(`ess.pdf`);
 
   console.log(req.body, "arwarwr");
