@@ -15,29 +15,28 @@ app.post("/test", function (req, res) {
 app.post("/cvv", async function (req, res) {
   const doc = new jsPDF("p", "pc", "a5");
 
-  doc.setFontSize(22);
+  console.log("ho");
+  if (req.body.names.length === req.body.work.length) {
+    doc.setFontSize(20);
+    doc.text(`${req.body.names}`, 15.8, 18);
 
-  if (req.body.names.length < req.body.work.length) {
-    console.log("ha");
-    doc.text(`${req.body.names}`, 17, 14);
     doc.setFontSize(14);
-    doc.text(`${req.body.work}`, 16.5, 16.5);
+    doc.text(`${req.body.work}`, 16.5, 20.5);
     doc.setFontSize(11);
-   doc.text(`${req.body.num}`, 9.5, 19);
-  doc.addSvgAsImage("call-outline.svg", 20, 20, 9, 19);
-    doc.save(`ess.pdf`);
-
+    doc.text(`${req.body.num}`, 7.5, 23);
+    doc.addImage("location", "png", 10, 10, 10, 10);
+    doc.save(`testo.pdf`);
     return;
   }
-  console.log("ho");
-  doc.text(`${req.body.names}`, 16.5, 14);
+  doc.setFontSize(22);
+  doc.text(`${req.body.names}`, 16.5, 18);
 
   doc.setFontSize(14);
-  doc.text(`${req.body.work}`, 16.5, 16.5);
+  doc.text(`${req.body.work}`, 16.4, 20.5);
   doc.setFontSize(11);
-  doc.text(`${req.body.num}`, 9.5, 19);
-  doc.addSvgAsImage("call-outline.svg", 20, 20, 9, 19)
-  doc.save(`ess.pdf`);
+  doc.text(`${req.body.num}`, 7.5, 23);
+  doc.addImage("location", "png", 10, 10, 10, 10);
+  doc.save(`testo.pdf`);
 
   console.log(req.body, "arwarwr");
   res.json({ jse: "sekjrlwjr" });

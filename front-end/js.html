@@ -38,7 +38,7 @@
         </div>
         <div class="fasl">
             <div class="dis">
-                <input type="text" class="in name" placeholder="Your Name" onkeydown="return /[a-z]/i.test(event.key) ">
+                <input type="text" class="in name" placeholder="Your Name" onkeydown="return  /[a-z s]/i.test(event.key) ">
                 <input type="text" class="in work"  placeholder="Your Work">
             </div>
                 <div class="dis">
@@ -46,7 +46,7 @@
                 <input type="text" class="in email"  placeholder="Your Email"  >
             </div>
             <div class="dis">
-                <input type="text" class="in city" placeholder="Your City" >
+                <input type="text" class="in city" placeholder="Your City" onkeydown="return  /[a-z s]/i.test(event.key) ">
                 <input type="file" accept="image/*" class="in img" placeholder="img for you">
               
             </div>
@@ -108,6 +108,7 @@
         </div>
         <div class="fasl" style="margin: 0px;">
        <div style="display: flex; justify-content: center;">
+        <p style="margin-bottom:30px;"></p>
         <p  class="error"> </p>
        </div>
      
@@ -134,7 +135,7 @@
   <p  class="margin number" style="font-size:  20px; display: inline;  margin-block-start: 0px;margin-block-end: 0px;">1-55000</p>
   <img src="mail-outline.svg" style="width:18px;"  alt="">
   <p class="margin email2">abodkh77@gmail.com</p>
-  <img src="location-outline.svg" style="width:18px;" alt="">
+  <img src="location.png" style="width:12px;" alt="">
   <p class="margin city2">San Fransisco,CA</p>
   <br>
   <div class="dis" style="     justify-content: center;">
