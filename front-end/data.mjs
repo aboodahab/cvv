@@ -27,6 +27,7 @@ const name3 = document.querySelector(".name3");
 const num3 = document.querySelector(".num3");
 const ref = document.querySelector(".ref");
 const important = document.querySelector(".important");
+const mam = document.querySelector(".mam");
 const ref2 = document.querySelector(".ref2");
 const summaryText = document.querySelector(".summary-text");
 const unversityText = document.querySelector(".universty-text");
@@ -40,6 +41,7 @@ const numberText4 = document.querySelector(".numberText4");
 const nameText4 = document.querySelector(".nameText4");
 
 export {
+  mam,
   btnDownload,
   refDiv,
   important,

@@ -27,6 +27,7 @@ import {
   fetchFn,
 } from "./functions.mjs";
 import {
+  mam,
   btnDownload,
   ref2,
   workText,
@@ -53,7 +54,8 @@ date2.setAttribute("max", today);
 function onClickBtn(e) {
   let dat1 = date1.value.split("-");
   let dat2 = date2.value.split("-");
-  console.log(dat1, dat2);
+
+  console.log(dat1[1], dat2);
   if (
     names.value === "" ||
     work.value === "" ||
@@ -78,9 +80,8 @@ function onClickBtn(e) {
     console.log("error: One or more fields are empty");
     return;
   }
-  let datt1 = dat1[1].slice(1);
-  let datt2 = dat1[1].slice(1);
-  if (datt1 > datt2) {
+
+  if (dat1[0] > dat2[0]) {
     e.preventDefault();
     onError.style.display = "flex";
     onError.textContent = "Error: One or more fields are emffffpty";
@@ -91,10 +92,10 @@ function onClickBtn(e) {
     console.log("ee");
     return;
   }
-  if (datt1[1] > datt2[1]) {
+  if (dat1[1] > dat2[1]) {
     e.preventDefault();
     onError.style.display = "flex";
-    onError.textContent = "Error: One or more fields are emffffpty";
+    onError.textContent = "Error: please add the correct universty date";
     setTimeout(() => {
       onError.style.display = "none";
       onError.textContent = "";
@@ -103,10 +104,10 @@ function onClickBtn(e) {
     return;
   }
 
-  if (datt1[2] > datt2[2]) {
+  if (dat1[2] > dat2[2]) {
     e.preventDefault();
     onError.style.display = "flex";
-    onError.textContent = "Error: One or more fields are emffffpty";
+    onError.textContent = "Error: please add the correct universty date";
     setTimeout(() => {
       onError.style.display = "none";
       onError.textContent = "";
@@ -149,7 +150,7 @@ function onClickBtn(e) {
           date1,
           date2
         );
-      }, 3000);
+      }, 1500);
     });
     return;
   }
@@ -186,7 +187,7 @@ function frontEnd() {
   location2.textContent = `${city.value}`;
   number.textContent = `${num.value}`;
   email2.textContent = `${email.value}`;
-
+  mam.textContent = `${socialMedia.value}`;
   onError.style.display = "none";
   setTimeout(() => {
     important.style.display = "none";
