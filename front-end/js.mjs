@@ -92,6 +92,7 @@ function onClickBtn(e) {
     console.log("ee");
     return;
   }
+
   if (dat1[1] > dat2[1]) {
     e.preventDefault();
     onError.style.display = "flex";
