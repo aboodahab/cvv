@@ -1,17 +1,21 @@
 # :لتستطيع تشغيل البرنامج 
-:عليك تحميل الاضافات الاتية
-<br>
+:عليك تحميل الاضافات الاتية <br>
 express <br>
 nodmeon <br>
 fs <br>
 jspdf <br>
-cors <br>
+cors
+ <br>
+
 # لتحميل الاضافات اكتب في الشاشة السوداء <br>
 npm install -g nodemon<br>
 npm install jspdf<br>
 npm install cors<br>
 npm install fs<br>
-npm install express<br>
+npm install express
+<br>
+
+# بعد تشغيل البرنامج:
 
 ## اولا عليك ان تضع معلوماتك مثل :
 اسمك الكامل <br>
