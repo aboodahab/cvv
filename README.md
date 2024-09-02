@@ -8,12 +8,9 @@ cors
  <br>
 
 # لتحميل الاضافات اكتب في الشاشة السوداء <br>
-npm install -g nodemon<br>
-npm install jspdf<br>
-npm install cors<br>
-npm install fs<br>
-npm install express
+npm install -g nodemon
 <br>
+
 
 # بعد تشغيل البرنامج:
 
